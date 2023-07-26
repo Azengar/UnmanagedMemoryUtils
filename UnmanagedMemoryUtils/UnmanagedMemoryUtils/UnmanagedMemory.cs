@@ -185,7 +185,7 @@ namespace UnmanagedMemoryUtils
         public readonly void CopyTo(UnmanagedMemory destination)
         {
             Debug.Assert(destination.Length >= m_Length);
-            Unsafe.CopyBlock(destination.VoidPointer, VoidPointer, (uint)Length);
+            Unsafe.CopyBlockUnaligned(destination.VoidPointer, VoidPointer, (uint)Length);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace UnmanagedMemoryUtils
         public readonly void CopyTo(Memory<byte> destination)
         {
             Debug.Assert(destination.Length >= m_Length);
-            Unsafe.CopyBlock(ref destination.Span[0], ref Span[0], (uint)Length);
+            Unsafe.CopyBlockUnaligned(ref destination.Span[0], ref Span[0], (uint)Length);
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace UnmanagedMemoryUtils
         public readonly void CopyTo(byte[] destination)
         {
             Debug.Assert(destination.Length >= m_Length);
-            Unsafe.CopyBlock(ref destination[0], ref Span[0], (uint)Length);
+            Unsafe.CopyBlockUnaligned(ref destination[0], ref Span[0], (uint)Length);
         }
 
         /// <summary>
@@ -494,7 +494,7 @@ namespace UnmanagedMemoryUtils
         public readonly void CopyTo(UnmanagedMemory<T> destination)
         {
             Debug.Assert(destination.Length >= m_Length);
-            Unsafe.CopyBlock(TypedPointer, destination.TypedPointer, (uint)ByteLength);
+            Unsafe.CopyBlockUnaligned(TypedPointer, destination.TypedPointer, (uint)ByteLength);
         }
 
         /// <summary>
@@ -509,7 +509,7 @@ namespace UnmanagedMemoryUtils
         {
             Debug.Assert(destination.Length >= m_Length);
             Memory<byte> buffer = Unsafe.As<Memory<T>, Memory<byte>>(ref destination);
-            Unsafe.CopyBlock(ref buffer.Span[0], ref ((byte*)Pointer)[0], (uint)ByteLength);
+            Unsafe.CopyBlockUnaligned(ref buffer.Span[0], ref ((byte*)Pointer)[0], (uint)ByteLength);
         }
 
         /// <summary>
@@ -524,7 +524,7 @@ namespace UnmanagedMemoryUtils
         {
             Debug.Assert(destination.Length >= m_Length);
             Span<byte> buffer = MemoryMarshal.AsBytes(destination.AsSpan());
-            Unsafe.CopyBlock(ref buffer[0], ref ((byte*)Pointer)[0], (uint)ByteLength);
+            Unsafe.CopyBlockUnaligned(ref buffer[0], ref ((byte*)Pointer)[0], (uint)ByteLength);
         }
 
         /// <summary>
