@@ -7,7 +7,7 @@
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>UnmanagedMemoryUtils</Title>
-		<VersionPrefix>1.0.2</VersionPrefix>
+		<VersionPrefix>1.0.3</VersionPrefix>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>A .NET collection of utilities for working with unmanaged memory.
 Provides faster alternatives to Memory&lt;T&gt; and ReadOnlyMemory&lt;T&gt; in addition to accessing unmanaged string from managed code.</Description>
@@ -17,7 +17,13 @@ Provides faster alternatives to Memory&lt;T&gt; and ReadOnlyMemory&lt;T&gt; in a
 		<PackageTags>.NET;C#</PackageTags>
 		<Copyright>BSD-3-Clause license</Copyright>
 		<PackageProjectUrl>https://github.com/Azengar/UnmanagedMemoryUtils</PackageProjectUrl>
-		<PackageReleaseNotes>* Changed from `Unsafe.CopyBlock` to `Unsafe.CopyBlockUnaligned`</PackageReleaseNotes>
+		<PackageReleaseNotes>Version 1.0.2
+
+* Changed from `Unsafe.CopyBlock` to `Unsafe.CopyBlockUnaligned`.
+
+Version 1.0.3
+
+* Added Aggressive Inlining for Allocate methods.</PackageReleaseNotes>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />

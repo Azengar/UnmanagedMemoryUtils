@@ -19,6 +19,7 @@ namespace UnmanagedMemoryUtils
         /// </summary>
         /// <param name="length">The length of the memory range.</param>
         /// <returns>The unmanaged memory that points to the newly allocated memory.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UnmanagedMemory AllocateFromHGlobal(int length)
         {
             return new UnmanagedMemory(Marshal.AllocHGlobal(length), length);
@@ -29,6 +30,7 @@ namespace UnmanagedMemoryUtils
         /// </summary>
         /// <param name="length">The length of the memory range.</param>
         /// <returns>The unmanaged memory that points to the newly allocated memory.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UnmanagedMemory AllocateFromCoTaskMem(int length)
         {
             return new UnmanagedMemory(Marshal.AllocCoTaskMem(length), length);
@@ -313,6 +315,7 @@ namespace UnmanagedMemoryUtils
         /// </summary>
         /// <param name="length">The amount of items to store in this memory.</param>
         /// <returns>The unmanaged memory that points to the newly allocated memory.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UnmanagedMemory<T> AllocateFromHGlobal(int length)
         {
             return new UnmanagedMemory<T>(Marshal.AllocHGlobal(length * TypeSize), length);
@@ -323,6 +326,7 @@ namespace UnmanagedMemoryUtils
         /// </summary>
         /// <param name="length">The amount of items to store in this memory.</param>
         /// <returns>The unmanaged memory that points to the newly allocated memory.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UnmanagedMemory<T> AllocateFromCoTaskMem(int length)
         {
             return new UnmanagedMemory<T>(Marshal.AllocCoTaskMem(length * TypeSize), length);
