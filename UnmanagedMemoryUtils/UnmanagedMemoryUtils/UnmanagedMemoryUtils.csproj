@@ -7,10 +7,11 @@
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>UnmanagedMemoryUtils</Title>
-		<VersionPrefix>1.0.3</VersionPrefix>
+		<VersionPrefix>1.0.4</VersionPrefix>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>A .NET collection of utilities for working with unmanaged memory.
-Provides faster alternatives to Memory&lt;T&gt; and ReadOnlyMemory&lt;T&gt; in addition to accessing unmanaged string from managed code.</Description>
+Provides faster alternatives to Memory&lt;T&gt; and ReadOnlyMemory&lt;T&gt; in addition to accessing unmanaged string from managed code.
+Allows to manipulate array of unmanaged pointers with the UnmanagedArrayPointer&lt;T&gt; struct.</Description>
 		<Authors>Azengar</Authors>
 		<RepositoryUrl>https://github.com/Azengar/UnmanagedMemoryUtils</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
@@ -23,7 +24,13 @@ Provides faster alternatives to Memory&lt;T&gt; and ReadOnlyMemory&lt;T&gt; in a
 
 Version 1.0.3
 
-* Added Aggressive Inlining for Allocate methods.</PackageReleaseNotes>
+* Added Aggressive Inlining for Allocate methods.
+
+Version 1.0.4
+
+* Added the UnmanagedPointerArray&lt;T&gt; struct used to manipulate array of pointers.
+* Marked all properties as 'readonly' as they don't modify the state of the structs.
+* Use the new 'namespace' syntax for less indentation levels.</PackageReleaseNotes>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
