@@ -22,3 +22,7 @@ Allows to manipulate array of unmanaged pointers with the `UnmanagedArrayPointer
 * Added the `UnmanagedPointerArray<T>` struct used to manipulate array of pointers.
 * Marked all properties as `readonly` as they don't modify the state of the structs.
 * Use the new `namespace` syntax for less indentation levels.
+
+### Version 1.0.5
+
+* Fixed an issue that made it impossible to retrieve the string value of an `UnmanagedString` with the `ToString` method.

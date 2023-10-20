@@ -121,7 +121,7 @@ public unsafe struct UnmanagedString : IUnmanagedString, IEquatable<UnmanagedStr
 
     public override readonly string ToString()
     {
-        if (Pointer != nint.Zero) return string.Empty;
+        if (Pointer == nint.Zero) return string.Empty;
         return m_Marshaller.Invoke(Pointer) ?? string.Empty;
     }
 
