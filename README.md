@@ -9,6 +9,15 @@ Provides faster alternatives to `Memory<T>` and `ReadOnlyMemory<T>` in addition 
 
 Allows to manipulate array of unmanaged pointers with the `UnmanagedArrayPointer<T>` struct.
 
+## Making a release
+
+* Generate new commit with your changes with a message: `git commit -m "Version X.X.X: Notes about the change"`
+* Tag the new commit: `git tag vX.X.X -m "Version X.X.X"`
+* Push the commit: `git push` and the tag `git push origin vX.X.X`
+* Build the new `Release` binaries. The package is built automatically alongside the binaries.
+* Navigate to `./UnmanagedMemoryUtils/UnmanagedMemoryUtils/bin/Release`
+* Publish the package: `dotnet nuget push .\UnmanagedMemoryUtils.X.X.X.nupkg --api-key <YOUR_API_KEY> --source https://api.nuget.org/v3/index.json`
+
 ## Changelog
 
 ### Version 1.0.2
@@ -32,3 +41,9 @@ Allows to manipulate array of unmanaged pointers with the `UnmanagedArrayPointer
 ### Version 1.0.6
 
 * Readme update with Nuget link.
+
+### Version 1.1.0
+
+* Update to .NET 8
+* Adds a new `IUnsafeDisposable` interface which offers an unsafe but less performance impacting to the standard `IDisposable` and finalizer pattern.
+	* This interface is now implemented by `IUnmanagedString` and is available to use outside the library.

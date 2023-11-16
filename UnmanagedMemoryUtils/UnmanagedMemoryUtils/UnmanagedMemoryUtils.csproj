@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>UnmanagedMemoryUtils</Title>
-		<VersionPrefix>1.0.6</VersionPrefix>
+		<VersionPrefix>1.1.0</VersionPrefix>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>A .NET collection of utilities for working with unmanaged memory.
 Provides faster alternatives to Memory&lt;T&gt; and ReadOnlyMemory&lt;T&gt; in addition to accessing unmanaged string from managed code.
@@ -38,8 +38,14 @@ Version 1.0.5
 
 Version 1.0.6
 
-* Readme update with Nuget link.</PackageReleaseNotes>
-	</PropertyGroup>
+* Readme update with Nuget link.
+
+### Version 1.1.0
+
+* Update to .NET 8
+* Adds a new IUnsafeDisposable interface which offers an unsafe but less performance impacting to the standard IDisposable and finalizer pattern.
+* This interface is now implemented by IUnmanagedString and is available to use outside the library.</PackageReleaseNotes>
+</PropertyGroup>
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
